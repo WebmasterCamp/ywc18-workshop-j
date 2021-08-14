@@ -41,9 +41,9 @@ export const MainLayout = (props: MainLayoutProps) => {
         <div className="w-screen h-screen bg-black">
           <div className="flex flex-col items-center justify-center h-[95%]">
             <p className="text-purple-600 text-8xl">
-              เพราะช่วงเวลา<span className="text-yellow-300">ดีดี</span>
+              เพราะช่วงเวลา<span className="text-purple-600">ดีดี</span>
             </p>
-            <p className="text-purple-300 text-7xl">เกิดที่ร้านเสมอ</p>
+            <p className="text-purple-600 text-7xl">เกิดที่ร้านเสมอ</p>
             <div className="mt-[106px] flex space-x-2">
               <div
                 onClick={() => scrollToBottom()}
@@ -59,7 +59,7 @@ export const MainLayout = (props: MainLayoutProps) => {
         </div>
       </div>
       <div
-        className={classNames("top-0 left-0 right-0 z-50", {
+        className={classNames("top-0 left-0 right-0 z-40", {
           "fixed block": !visible,
           hidden: visible,
         })}
