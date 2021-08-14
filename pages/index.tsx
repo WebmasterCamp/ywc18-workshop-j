@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
+import HomePage from "../features/HomePage";
 
 const Home: NextPage = () => {
-  return <div className="text-4xl text-red-500">We are superhero !!</div>;
+  return <HomePage />;
 };
 
 export default Home;
