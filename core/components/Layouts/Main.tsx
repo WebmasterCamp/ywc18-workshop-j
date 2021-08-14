@@ -43,7 +43,7 @@ export const MainLayout = (props: MainLayoutProps) => {
             <p className="text-purple-600 text-8xl">
               เพราะช่วงเวลา<span className="text-yellow-300">ดีดี</span>
             </p>
-            <p className="text-white text-7xl">เกิดที่ร้านเสมอ</p>
+            <p className="text-purple-300 text-7xl">เกิดที่ร้านเสมอ</p>
             <div className="mt-[106px] flex space-x-2">
               <div
                 onClick={() => scrollToBottom()}
