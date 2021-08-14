@@ -5,7 +5,7 @@ export const HomePageData = [
     date: "วันนี้ 18.00 น.",
     image: "https://placeimg.com/640/480/any/sepia",
     description: "Details here Details here Details here Details here",
-    tag: ["Category1", "Category2"],
+    tag: ["jazzbar", "ข้าวสาร"],
   },
   {
     event_id: 2,
@@ -13,7 +13,7 @@ export const HomePageData = [
     date: "วันนี้ 18.00 น.",
     image: "https://placeimg.com/640/480/any/sepia",
     description: "Details here Details here Details here Details here",
-    tag: ["Category1", "Category2"],
+    tag: ["นั่งชิว", "Thonglor", "ราคาถูก"],
   },
   {
     event_id: 3,
@@ -21,7 +21,7 @@ export const HomePageData = [
     date: "วันนี้ 18.00 น.",
     image: "https://placeimg.com/640/480/any/sepia",
     description: "Details here Details here Details here Details here",
-    tag: ["Category1", "Category2"],
+    tag: ["livemusic", "football"],
   },
   {
     event_id: 4,
@@ -29,6 +29,6 @@ export const HomePageData = [
     date: "วันนี้ 18.00 น.",
     image: "https://placeimg.com/640/480/any/sepia",
     description: "Details here Details here Details here Details here",
-    tag: ["Category1", "Category2"],
+    tag: ["specialevent", "ร้านกึ่งผับ"],
   },
 ];
