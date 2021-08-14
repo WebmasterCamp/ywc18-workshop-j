@@ -41,9 +41,9 @@ export const MainLayout = (props: MainLayoutProps) => {
         <div className="w-screen h-screen bg-black">
           <div className="flex flex-col items-center justify-center h-[95%]">
             <p className="text-purple-600 text-8xl">
-              เพราะช่วงเวลาดีดี เกิดที่ร้านเสมอ
+              เพราะช่วงเวลา<span className="text-yellow-300">ดีดี</span>
             </p>
-            <p className="text-white text-7xl">Slogoan to be announced</p>
+            <p className="text-white text-7xl">เกิดที่ร้านเสมอ</p>
             <div className="mt-[106px] flex space-x-2">
               <div
                 onClick={() => scrollToBottom()}
