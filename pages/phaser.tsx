@@ -2,7 +2,10 @@ import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 
-const MyPhaser = dynamic(() => import("../src/hello-phaser"), {
+// const MyPhaser = dynamic(() => import("../src/hello-phaser"), {
+//   ssr: false,
+// });
+const MyPhaser = dynamic(() => import("../src/tilemap"), {
   ssr: false,
 });
 
