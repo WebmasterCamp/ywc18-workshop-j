@@ -2,6 +2,7 @@ import classNames from "classnames";
 import React, { ReactChild, useEffect, useRef, useState } from "react";
 
 import { Navbar } from "../Navbar";
+import { Footer } from "../Footer";
 
 interface MainLayoutProps {
   children: ReactChild;
@@ -66,6 +67,9 @@ export const MainLayout = (props: MainLayoutProps) => {
         <Navbar />
       </div>
       <div className="mx-4 tablet:mx-auto max-w-7xl">{props.children}</div>
+      <div className="mt-16">
+        <Footer />
+      </div>
     </>
   );
 };
