@@ -25,7 +25,7 @@ const HomePage = () => {
         </div>
         <div className="grid tablet:mt-[56px] gap-y-[41px] grid-cols-12">
           <div className="col-span-12">
-            <p className="text-2xl">อิเวนท์พิเศษ</p>
+            <p className="text-2xl">อีเวนท์พิเศษ</p>
           </div>
           <div className="col-span-12">
             <Carousel data={HomePageData} />
@@ -33,7 +33,7 @@ const HomePage = () => {
         </div>
         <div className="grid  tablet:mt-[159px] gap-x-1 tablet:gap-x-[25px] gap-y-[41px] grid-cols-12">
           <div className="flex justify-between col-span-12">
-            <p className="text-2xl">อิเวนท์</p>
+            <p className="text-2xl">อีเวนท์</p>
             <div className="w-[242px] border border-gray-700 rounded-md flex justify-center items-center h-[48px]">
               <p>ดูอีเวนท์ทั้งหมด</p>
             </div>
