@@ -18,7 +18,7 @@ export const EventCard = ({
   image,
 }: EventCardProps) => {
   return (
-    <div className="flex flex-col tablet:h-[481px] h-[380px] justify-between bg-white border">
+    <div className="flex shadow-lg flex-col tablet:h-[481px] pt-4 h-[380px] justify-between px-[24px] bg-white border">
       <div className="relative h-[227px]">
         <div className="absolute top-0 z-10 flex items-center justify-center w-10 h-10 bg-white rounded-full">
           ❤️
@@ -30,7 +30,7 @@ export const EventCard = ({
           className="absolute top-0 w-full h-full bg-no-repeat bg-cover"
         />
       </div>
-      <div className="bg-gray-300 flex flex-col justify-center px-10 h-[254px]">
+      <div className="flex flex-col justify-center px-10 h-[254px]">
         <p className="text-2xl">{eventName}</p>
         <p className="text-base">{time}</p>
         <p className="text-base">{description}</p>
@@ -38,9 +38,9 @@ export const EventCard = ({
           {_.map(tag, (item, i) => (
             <div
               key={i}
-              className="h-[32px] px-4 flex items-center rounded-md text-base bg-white border"
+              className="h-[32px] px-4 flex items-center rounded-md text-base bg-gray-200 border"
             >
-              <p className="text-base">{item}</p>
+              <p className="text-base text-purple-400">#{item}</p>
             </div>
           ))}
         </div>
