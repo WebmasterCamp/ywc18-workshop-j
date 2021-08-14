@@ -40,7 +40,7 @@ export const EventDetail = () => {
                 isShow={showModal}
                 onClose={() => setShowModal(false)}
               >
-                <div className="relative w-[600px] flex-auto p-6">
+                <div className="relative ">
                   <Character />
                 </div>
               </Modal>

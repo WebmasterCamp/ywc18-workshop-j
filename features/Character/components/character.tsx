@@ -1,10 +1,46 @@
 import type { NextPage } from "next";
 import router from "next/router";
+import { useEffect } from "react";
+import { useRef, useState } from "react";
 import { BiLeftArrowCircle, BiRightArrowCircle } from "react-icons/bi";
+import _ from "lodash";
 
-const characters = ["/phaser-logo.png"];
+const characters = [
+  "/singer.png",
+  "/visitor1.png",
+  "/visitor2.png",
+  "/visitor3.png",
+  "/visitor4.png",
+  "/visitor5.png",
+  "/visitor6.png",
+];
 
 const SelectCharacter: NextPage = () => {
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
+
+  const resetTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  useEffect(() => {
+    resetTimeout();
+  }, [index]);
+
+  const nextImage = () => {
+    if (index <= Math.abs(characters.length - 1)) {
+      setIndex((preState) => preState + 1);
+    }
+  };
+
+  const previousImage = () => {
+    if (index > 0) {
+      setIndex((preState) => preState - 1);
+    }
+  };
+
   return (
     <div className="container bg-[#FFFFFF] flex flex-col items-center p-16">
       <span className="text-4xl">เลือกตัวละคร</span>
@@ -19,10 +55,20 @@ const SelectCharacter: NextPage = () => {
           className="h-[48px] bg-gray-400 focus:outline-none"
         />
       </div>
-      <div className="flex items-center pt-8">
-        <BiLeftArrowCircle className="text-4xl" />
-        <div className="m-4 w-[128px] h-[128px]"></div>
-        <BiRightArrowCircle className="text-4xl" />
+      <div className="flex items-center justify-between pt-8">
+        <div className="flex items-center justify-start h-full mr-4 bg-grey-100">
+          <button onClick={() => nextImage()}>
+            <BiLeftArrowCircle className="text-4xl" />
+          </button>
+        </div>
+        <div>
+          <img src="/characters/image-5.png" />
+        </div>
+        <div className="flex items-center h-full ml-4 bg-grey-100">
+          <button onClick={() => previousImage()}>
+            <BiRightArrowCircle className="text-4xl" />
+          </button>
+        </div>
       </div>
       <div className="pt-8">
         <button
