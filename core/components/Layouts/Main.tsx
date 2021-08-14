@@ -22,7 +22,7 @@ export const MainLayout = (props: MainLayoutProps) => {
           }}
           className="w-full bg-no-repeat bg-cover h-[400px] tablet:h-760"
         ></div>
-        <div className="mx-auto max-w-7xl">{props.children}</div>
+        <div className="mx-4 tablet:mx-auto max-w-7xl">{props.children}</div>
       </div>
     </>
   );
