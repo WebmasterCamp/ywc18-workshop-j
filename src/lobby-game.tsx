@@ -3,15 +3,19 @@ import Phaser from "phaser";
 import { useState, useRef } from "react";
 import { IonPhaser, GameInstance } from "@ion-phaser/react";
 
+const isBlocked = (tile: Phaser.Tilemaps.Tile) => {
+  return !tile || (tile.index >= 5 && tile.index <= 8);
+};
+
 const Tilemap: NextPage = () => {
   const gameRef = useRef<HTMLIonPhaserElement>(null);
   const [initialize] = useState(true);
 
   class MainScene extends Phaser.Scene {
     preload() {
-      this.load.image("tiles", "/phaser-example/tiles.png");
-      this.load.image("player", "/phaser-example/player.png");
-      this.load.tilemapCSV("map", "/phaser-example/grid.csv");
+      this.load.image("tiles", "/lobby/tiles.png");
+      this.load.image("player", "/characters/singer.png");
+      this.load.tilemapCSV("map", "/lobby/grid.csv");
     }
 
     init() {
@@ -24,57 +28,58 @@ const Tilemap: NextPage = () => {
         tileWidth: 32,
         tileHeight: 32,
       });
-      var tileset = map.addTilesetImage("tiles", undefined, 32, 32, 1, 2);
+      // var tileset = map.addTilesetImage("tiles", undefined, 32, 32, 1, 0);
+      var tileset = map.addTilesetImage("tiles");
       var layer = map.createLayer(0, tileset, 0, 0);
 
-      var player = this.add.image(32 + 16, 32 + 16, "player");
+      var player = this.add.image(32 * 11 + 16, 32 * 11 + 16, "player");
 
       // Left
       this.input.keyboard.on("keydown-LEFT", function (_event: any) {
         var tile = layer.getTileAtWorldXY(player.x - 32, player.y, true);
 
-        if (tile.index === 2) {
+        if (isBlocked(tile)) {
           //  Blocked, we can't move
-        } else {
-          player.x -= 32;
-          player.angle = 180;
+          return;
         }
+        player.x -= 32;
+        // player.angle = 180;
       });
 
       //  Right
       this.input.keyboard.on("keydown-RIGHT", function (_event: any) {
         var tile = layer.getTileAtWorldXY(player.x + 32, player.y, true);
 
-        if (tile.index === 2) {
+        if (isBlocked(tile)) {
           //  Blocked, we can't move
-        } else {
-          player.x += 32;
-          player.angle = 0;
+          return;
         }
+        player.x += 32;
+        // player.angle = 0;
       });
 
       //  Up
       this.input.keyboard.on("keydown-UP", function (_event: any) {
         var tile = layer.getTileAtWorldXY(player.x, player.y - 32, true);
 
-        if (tile.index === 2) {
+        if (isBlocked(tile)) {
           //  Blocked, we can't move
-        } else {
-          player.y -= 32;
-          player.angle = -90;
+          return;
         }
+        player.y -= 32;
+        // player.angle = -90;
       });
 
       //  Down
       this.input.keyboard.on("keydown-DOWN", function (_event: any) {
         var tile = layer.getTileAtWorldXY(player.x, player.y + 32, true);
 
-        if (tile.index === 2) {
+        if (isBlocked(tile)) {
           //  Blocked, we can't move
-        } else {
-          player.y += 32;
-          player.angle = 90;
+          return;
         }
+        player.y += 32;
+        // player.angle = 90;
       });
     }
     update() {}
