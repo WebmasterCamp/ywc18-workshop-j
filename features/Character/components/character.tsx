@@ -42,12 +42,10 @@ const SelectCharacter: NextPage = () => {
   };
 
   return (
-    <div className="container bg-[#FFFFFF] flex flex-col items-center p-16">
-      <span className="text-4xl">เลือกตัวละคร</span>
-      <div className="pt-8 text-2xl">
-        <label htmlFor="fname" className="m-2">
-          ชื่อตัวละคร
-        </label>
+    <div className="bg-[#FFFFFF] flex ml-[20px] flex-col items-center p-16">
+      <span className="text-4xl">สร้างอวาต้าร์ของคุณ</span>
+      <div className="flex pt-8 text-2xl">
+        <p className="m-2">ชื่อ</p>
         <input
           type="text"
           id="fname"

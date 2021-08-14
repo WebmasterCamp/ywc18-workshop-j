@@ -1,4 +1,5 @@
 import React from "react";
+import { AiOutlineClose } from "react-icons/ai";
 
 export const Modal = ({ modalTitle, isShow, children, onClose }) => {
   return (
@@ -11,10 +12,12 @@ export const Modal = ({ modalTitle, isShow, children, onClose }) => {
                 <div className="flex items-start justify-between p-5 border-b border-solid rounded-t border-blueGray-200">
                   <h3 className="text-3xl font-semibold">{modalTitle}</h3>
                   <button
-                    className="float-right p-1 ml-auto text-3xl font-semibold leading-none text-black bg-transparent border-0 outline-none opacity-5 focus:outline-none"
+                    className="float-right ml-auto mr-2 text-3xl font-semibold leading-none text-black bg-transparent border-0 outline-none opacity-5 focus:outline-none"
                     onClick={onClose}
                   >
-                    <span className="text-xl text-black">X</span>
+                    <span className="text-xl text-black">
+                      <AiOutlineClose />
+                    </span>
                   </button>
                 </div>
                 {children}

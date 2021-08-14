@@ -3,12 +3,13 @@
 import React, { useState } from "react";
 import _ from "lodash";
 import { EventLayout } from "./components/Layout";
-import router from "next/router";
 import { Modal } from "core/Modal";
-import { Character } from "features/Character";
+import SelectCharacter from "features/Character/components/character";
 
 export const EventDetail = () => {
   const [showModal, setShowModal] = useState(false);
+  const [index, setIndex] = useState(0);
+
   return (
     <EventLayout>
       <div className="w-full">
@@ -22,12 +23,6 @@ export const EventDetail = () => {
           <div>
             <div className="flex justify-between tablet:mt-[40px]">
               <p className="text-6xl text-white">Event Name</p>
-              {/* <div
-                onClick={() => router.push("/character")}
-                className="h-[50px] flex items-center bg-pink-300 p-2"
-              >
-                <p className="text-2xl text-black">เข้าห้อง</p>
-              </div> */}
               <button
                 className="h-[50px] flex items-center bg-pink-300 p-2"
                 type="button"
@@ -38,10 +33,35 @@ export const EventDetail = () => {
               <Modal
                 modalTitle=""
                 isShow={showModal}
-                onClose={() => setShowModal(false)}
+                onClose={() => {
+                  setShowModal(false), setIndex(0);
+                }}
               >
-                <div className="relative ">
-                  <Character />
+                <div className="mx-0 w-[500px] overflow-hidden">
+                  <div
+                    style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+                    className="z-10 flex transition duration-700 ease-in whitespace-nowrap"
+                  >
+                    <div className="items-center h-[450px] justify-center inline-block w-full px-5">
+                      <div className="flex flex-col items-center justify-center w-full h-full">
+                        <p className="text-2xl">
+                          ไปเจอเพื่อนทั้งที คุณคงต้องแต่งตัวซักหน่อยแล้วล่ะ{" "}
+                        </p>
+                        <p className="text-2xl">จริงไหม?</p>
+                      </div>
+                      <div className="flex items-center justify-center">
+                        <button
+                          onClick={() => setIndex(1)}
+                          className="rounded-[4px] p-2 mx-4 bg-[#FFDADA]"
+                        >
+                          Avatar
+                        </button>
+                      </div>
+                    </div>
+                    <div className="inline-block w-full h-full">
+                      <SelectCharacter />
+                    </div>
+                  </div>
                 </div>
               </Modal>
             </div>
