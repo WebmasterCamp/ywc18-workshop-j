@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 import { BiArrowBack } from "react-icons/bi";
 
-const MyPhaser = dynamic(() => import("../../src/lobby-game"), {
+const MyPhaser = dynamic(() => import("../../features/Lobby"), {
   ssr: false,
 });
 
