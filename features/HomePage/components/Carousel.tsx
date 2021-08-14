@@ -40,8 +40,8 @@ export const Carousel = ({ data }: CarouselProps) => {
         {_.map(data, (item, idx: number) => (
           <div
             key={idx}
-            className={classNames("h-4 w-4 mx-2 rounded-full bg-pink-200", {
-              "bg-pink-500": index === idx,
+            className={classNames("h-4 w-4 mx-2 rounded-full bg-purple-200", {
+              "bg-purple-500": index === idx,
             })}
             onClick={() => {
               setIndex(idx);

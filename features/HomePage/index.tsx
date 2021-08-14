@@ -12,13 +12,16 @@ const HomePage = () => {
   return (
     <MainLayout>
       <>
-        <Input
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            setValue(event.target.value)
-          }
-          value={value}
-          className="w-full -translate-y-5 h-[48px] border border-gray-200"
-        />
+        <div className="flex justify-center w-full">
+          <Input
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setValue(event.target.value)
+            }
+            value={value}
+            placeholder="ค้นหาร้านที่คุณคิดถึง"
+            className="w-full mt-[200px] h-[48px] border border-gray-200"
+          />
+        </div>
         <div className="grid tablet:mt-[56px] gap-y-[41px] grid-cols-12">
           <div className="col-span-12">
             <p className="text-2xl">อิเวนท์พิเศษ</p>

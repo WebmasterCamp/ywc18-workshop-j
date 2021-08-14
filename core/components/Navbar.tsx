@@ -4,7 +4,7 @@ export const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 bg-pink-300">
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 bg-purple-300">
         <div className="container flex flex-wrap items-center justify-between px-4 mx-auto">
           <div className="relative flex justify-between w-full tablet:w-auto tablet:static tablet:block tablet:justify-start">
             <a
