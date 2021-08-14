@@ -18,7 +18,7 @@ export const MainLayout = (props: MainLayoutProps) => {
         </div>
         <div
           style={{
-            backgroundImage: "url(https://placeimg.com/900/480/people);",
+            backgroundImage: "url(https://placeimg.com/900/480/people)",
           }}
           className="w-full bg-no-repeat bg-cover h-[400px] tablet:h-760"
         ></div>

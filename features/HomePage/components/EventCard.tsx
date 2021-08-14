@@ -25,7 +25,7 @@ export const EventCard = ({
         </div>
         <div
           style={{
-            backgroundImage: `url(${image});`,
+            backgroundImage: `url(${image})`,
           }}
           className="absolute top-0 w-full h-full bg-no-repeat bg-cover"
         />
