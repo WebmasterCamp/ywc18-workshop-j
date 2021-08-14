@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Poppins Bold';
+  font-weight: 400;
+  src: url('../public/fonts/Pridi-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins SemiBold';
+  font-weight: 700;
+  src: url('../public/fonts/Pridi-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins ExtraLight';
+  font-weight: 700;
+  src: url('../public/fonts/Pridi-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins Light';
+  src: url('../public/fonts/Pridi-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins Medium';
+  src: url('../public/fonts/Pridi-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins Regular';
+  src: url('../public/fonts/Pridi-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins Semi Bold';
+  src: url('../public/fonts/Pridi-SemiBold.ttf');
+}
