@@ -59,7 +59,7 @@ export const MainLayout = (props: MainLayoutProps) => {
         </div>
       </div>
       <div
-        className={classNames("inset-0", {
+        className={classNames("inset-0 z-50", {
           "fixed block": !visible,
           hidden: visible,
         })}
