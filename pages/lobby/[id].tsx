@@ -18,7 +18,9 @@ const Home: NextPage = () => {
       <div className="flex items-center justify-center m-8 text-2xl">
         <div className="w-full flex items-center cursor-pointer">
           <Link href="/">
-            <BiArrowBack />
+            <a>
+              <BiArrowBack />
+            </a>
           </Link>
           <span className="mx-8"> ออกจากห้อง</span>
         </div>
