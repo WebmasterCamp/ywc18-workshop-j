@@ -10,7 +10,9 @@ export const Footer: NextPage = () => {
     <div className="h-[76px] bg-purple-300 px-16 flex items-center">
       <div>
         <Link href="/">
-          <Image src={logo} alt="logo" />
+          <a>
+            <Image src={logo} alt="logo" />
+          </a>
         </Link>
       </div>
       <div className="ml-4 text-white">© Maomun 2021. All rights reserved.</div>
