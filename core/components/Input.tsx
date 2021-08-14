@@ -12,7 +12,7 @@ export const Input = (props: InputProps) => {
   const { value, onChange, className, placeholder } = props;
   return (
     <div
-      className={`flex ${className} bg-white flex justify-center items-center w-[482px]`}
+      className={`flex ${className} bg-white flex justify-center items-center`}
     >
       <div className="flex items-center justify-center pl-2 mt-3 w-14">
         <SearchIcon stoke="#AAAAAA" className="block tablet:hidden" />

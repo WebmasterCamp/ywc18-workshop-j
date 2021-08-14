@@ -11,7 +11,6 @@ interface MainLayoutProps {
 }
 
 export const MainLayout = (props: MainLayoutProps) => {
-  const ref = useRef(null);
   const [visible, setVisible] = useState(true);
 
   const scrollToBottom = () => {
@@ -57,18 +56,16 @@ export const MainLayout = (props: MainLayoutProps) => {
             </div>
           </div>
         </div>
-        <div>
-          <div
-            className={classNames("z-50 inset-0", {
-              "fixed block": !visible,
-              hidden: visible,
-            })}
-          >
-            <Navbar />
-          </div>
-          <div className="mx-4 tablet:mx-auto max-w-7xl">{props.children}</div>
-        </div>
       </div>
+      <div
+        className={classNames("inset-0", {
+          "fixed block": !visible,
+          hidden: visible,
+        })}
+      >
+        <Navbar />
+      </div>
+      <div className="mx-4 tablet:mx-auto max-w-7xl">{props.children}</div>
     </>
   );
 };

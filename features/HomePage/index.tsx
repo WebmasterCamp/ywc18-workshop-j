@@ -6,6 +6,7 @@ import { EventCard } from "./components/EventCard";
 import { MainLayout } from "../../core/components/Layouts/Main";
 import { HomePageData } from "./HomePageData";
 import { Carousel } from "./components/Carousel";
+import router from "next/router";
 
 const HomePage = () => {
   const [value, setValue] = useState("");
@@ -41,6 +42,7 @@ const HomePage = () => {
             HomePageData,
             (
               item: {
+                event_id: number;
                 event_name: string;
                 date: string;
                 description: string;
@@ -51,7 +53,8 @@ const HomePage = () => {
             ) => (
               <div
                 key={i}
-                className="flex col-span-12 tablet:col-span-2 laptop:col-span-4"
+                onClick={() => router.push(`/event/detail/${item.event_id}`)}
+                className="flex col-span-12 cursor-pointer tablet:col-span-2 laptop:col-span-4"
               >
                 <EventCard
                   tag={item.tag}

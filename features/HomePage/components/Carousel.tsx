@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import classNames from "classnames";
 import _ from "lodash";
 import { EventCard } from "./EventCard";
+import router from "next/router";
 
 interface CarouselProps {
   data: any;
@@ -55,7 +56,11 @@ export const Carousel = ({ data }: CarouselProps) => {
         style={{ transform: `translate3d(${-index * (100 / 3)}%, 0, 0)` }}
       >
         {_.map(data, (item, i) => (
-          <div className="inline-block" key={i}>
+          <div
+            onClick={() => router.push(`/event/detail/${item.event_id}`)}
+            className="inline-block"
+            key={i}
+          >
             <EventCard
               description={item.description}
               image={item.image}

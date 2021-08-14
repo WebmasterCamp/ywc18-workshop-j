@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Character from "../src/character.tsx";
+import { Character } from "../features/Character";
 
 const CharacterPage: NextPage = () => {
   return <Character />;

@@ -1,10 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import React, { useState } from "react";
 import _ from "lodash";
 import { EventLayout } from "./components/Layout";
+import router from "next/router";
+import { Modal } from "core/Modal";
+import { Character } from "features/Character";
 
 export const EventDetail = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <EventLayout>
       <div className="w-full">
@@ -18,9 +22,28 @@ export const EventDetail = () => {
           <div>
             <div className="flex justify-between tablet:mt-[40px]">
               <p className="text-6xl text-white">Event Name</p>
-              <div className="h-[50px] flex items-center bg-pink-300 p-2">
-                <p className="text-2xl text-black">จองอีเวนท์นี้</p>
-              </div>
+              {/* <div
+                onClick={() => router.push("/character")}
+                className="h-[50px] flex items-center bg-pink-300 p-2"
+              >
+                <p className="text-2xl text-black">เข้าห้อง</p>
+              </div> */}
+              <button
+                className="h-[50px] flex items-center bg-pink-300 p-2"
+                type="button"
+                onClick={() => setShowModal(true)}
+              >
+                <p className="text-2xl text-black">เข้าห้อง</p>
+              </button>
+              <Modal
+                modalTitle=""
+                isShow={showModal}
+                onClose={() => setShowModal(false)}
+              >
+                <div className="relative w-[600px] flex-auto p-6">
+                  <Character />
+                </div>
+              </Modal>
             </div>
             <div className="flex flex-col text-white">
               <p className="text-base">วันนี้ 18:00 น.</p>
