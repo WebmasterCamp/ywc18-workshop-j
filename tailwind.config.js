@@ -1,8 +1,15 @@
+const tailwindcssDefaultConfig = require("tailwindcss/defaultConfig");
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   mode: "jit",
   prefix: "",
   important: false,
   separator: ":",
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
   purge: [
     "./core/pages/**/*.{js,ts,jsx,tsx}",
     "./core/components/**/*.{js,ts,jsx,tsx}",
@@ -13,7 +20,17 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    ...tailwindcssDefaultConfig.theme,
+    screens: {
+      tablet: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      laptop: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      desktop: "1280px",
+      // => @media (min-width: 1280px) { ... }
+    },
   },
   variants: {
     extend: {},
